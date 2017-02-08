@@ -1,0 +1,114 @@
+body {
+  padding:0px;
+  margin:0px;
+  color: #574F4B;
+	background: #FFFFFF;
+
+}
+
+a {
+  text-decoration: none; 
+}
+/* header */
+.main {
+	
+	min-height: 6.8em;
+	border: 1px solid black;
+	border-top-color: rgba(1,1,1, 0.2);
+  border-right-color: rgba(1,1,1, 0.1);
+  border-bottom-color: rgba(0,0,0, 0.1);
+  border-left-color: rgba(0,0,0, 0.1);
+
+}		
+/*header {
+	display: block;
+	position: relative;
+	border: 3px solid black;
+
+}*/
+/* content*/
+
+.page {
+	background: rgba(242, 239, 233, 0.6);
+	display: none;
+
+  float: left;
+	height: 35em;
+	width: 100%;
+  margin:auto; /*to center*/
+  /*padding-top: 1em;*/
+	/*border: 1px solid black;
+	border-top-color: rgba(1,1,1, 0.2);
+  border-right-color: rgba(1,1,1, 0.1);
+  border-bottom-color: rgba(1,1,1, 0.1);
+  border-left-color: rgba(0,0,0, 0.1);*/
+    
+
+}
+
+ 
+#slideshow {
+    margin:  auto;
+    position: relative;
+    width: 20em;
+
+
+}
+ 
+#slideshow ul {
+  list-style: none;
+}
+ 
+#slideshow li {
+    float: left;
+    overflow: hidden;
+    margin: 0 20px 0 0;
+     
+}
+ 
+#slideshow li a {
+    color: #222;
+    text-decoration: none;     
+    -webkit-transition: color 0.5s ease;
+       -moz-transition: color 0.5s ease;
+         -o-transition: color 0.5s ease;
+        -ms-transition: color 0.5s ease;
+            transition: color 0.5s ease;
+}
+ 
+#slideshow li a:hover {
+    color: #50b0df;
+}
+ 
+#slideshow li img {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: opacity 1s ease-in-out;
+     -moz-transition: opacity 1s ease-in-out;
+       -o-transition: opacity 1s ease-in-out;
+      -ms-transition: opacity 1s ease-in-out;
+          transition: opacity 1s ease-in-out;
+ 
+}
+ 
+#slideshow li img:target {
+    z-index: 1;
+}
+ 
+#slideshow li img:not(:target) {
+    opacity: 0;
+}
+/* footer*/
+footer{
+    width:100%;
+    font-size: 0.7em;
+    background-color: rgba(255, 255, 255, 0.2); /*opacity for only this block*/
+    height: auto;
+    padding-left: 2em;
+    margin-top: 1em;	
+
+}
+
+

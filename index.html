@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<title>Page Transitions with CSS3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Your name" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		
+		<link rel="stylesheet" type="text/css" href="css/page_transition.css" />
+		<link rel="stylesheet" type="text/css" href="css/navigation.css" />
+		<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css' />
+	</head>
+	<body>				
+		<!-- Home -->
+		<div id="home" class="content">
+			<h2>Home</h2>
+			<p>Bonjour je suis Matthieu Jungfer et bienvenu sur mon site !</p>
+			<p>A travers ce site vous allez voir qui je suis, quelles sont mes experiences, mes projets et aussi quelles sont mes passions.</p>
+			<p>L'objectif étant à la fois de découvrir mon univers mais aussi de vous donner le moyen de juger mes capacités techniques web.</p>
+			<p>Je vais pour cela dedier chaque page à une technologie différente. Pour ce site j'ai décidé de ne pas utiliser de framework ou de plugin comme jquery ou autre afin de me plonger au plus profond de la technologie. Ce site est aussi entierement fait sur une seule page!</p>
+			<p>Bonne navigation !</p>
+				<br><p>Les technologies utilisées sont listées ci-dessous dans ce magnifique slider fais main!</p>
+			<div id="result">
+			</div>	
+			<div id="slideshow" class="works">
+
+		  		<ul>
+				    <li><a href="#one" >1</a><img  style="z-index:5" id="one" src="images/css3_html5.png" ></li>
+				    <li><a href="#two">2</a> <img id="two" src="images/javascript.png"></li>
+				    <li><a href="#three">3</a> <img id="three" src="images/php.png"></li>
+				    <li><a href="#four">4</a> <img id="four" src="images/angular_node.jpg"></li>
+				    <!-- <li><a href="#five">Five</a> <img id="five" src="images/me.png"></li> -->
+				</ul>
+			</div>
+		</div>
+		<!-- /Home -->
+		
+		<!-- About -->
+		<div id="about" class="panel">
+			<div class="content">
+				<div id="result2">
+					<p>Hey</p>
+				</div>
+				<h2>About me</h2>
+				<p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+			</div>
+		</div>
+		<!-- /About -->
+		
+		<!-- Portfolio -->
+		<div id="portfolio" class="panel">
+			<div class="content">
+				<h2>Mes passions</h2>
+				<p>It looks fucking great sir!</p>
+								<p>Some really nice portfolio shots:</p>
+				<ul class="works">
+					<li><a href="http://dribbble.com/shots/394177-Sheriff-Woody"><img src="images/portfolio_01.jpeg" width="250"></a></li>
+					<li><a href="http://dribbble.com/shots/392403-Spaceman"><img src="images/portfolio_02.jpeg" width="250"></a></li>
+					<li><a href="http://dribbble.com/shots/388799-Harvey-Birdman"><img src="images/portfolio_03.jpeg" width="250"></a></li>
+				</ul>
+				<!-- <p class="footnote">Dribbble shots by <a href="http://dribbble.com/stuntman">Matt Kaufenberg</a>.</p> -->
+			</div>
+		</div>
+		<!-- /Portfolio -->
+
+		<!-- Contact -->
+		<div id="contact" class="panel">
+			<div class="content">
+				<h2>Contact</h2>
+				<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+				<p>Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.</p>
+				<form id="form">
+					<p><label>Your Name</label><input type="text" /></p>
+					<p><label>Your Email</label><input type="text" /></p>
+					<p><label>Your Message</label><textarea></textarea></p>
+				</form>
+			</div>
+		</div>
+		<!-- /Contact -->
+		
+		<!-- Header with Navigation -->
+		<div id="header">
+			<h1>Portfolio Matthieu Jungfer</h1>
+			<ul id="navigation">
+				<li><a id="link-home" href="#home">Home</a></li>	
+				<li><a id="link-about" href="#about">About Me</a></li>
+				<li><a id="link-portfolio" href="#portfolio">Mes Passions</a></li>
+				<li><a id="link-contact" href="#contact">Contact</a></li>
+			</ul>
+			</nav>
+		</div>
+	</body>
+
+<script type="text/javascript">
+	var links = document.querySelectorAll("#slideshow li a"),
+		navs  =	document.querySelectorAll("#navigation li a")
+    	linksLen = links.length;
+     // result.innerHTML = "Nombre de liens " + linksLen + " nombre de navs " + navs.length ;
+
+for (var i = 0 ; i < linksLen ; i++) {
+    links[i].onclick = function() {
+    	
+        // On appelle notre fonction pour afficher les images
+        displayPage(this); 
+        return false; // Et on bloque la redirection
+    };
+}
+
+for (var j = 0 ; j < navs.length ; j++) {
+		navs[j].onclick =	function() {
+	        // On appelle notre fonction pour afficher les images
+	        displayPage(this,true);    
+	    };
+}
+
+
+function displayPage(link,change_page) {	
+        var imgs = document.querySelectorAll('#slideshow li img');  
+         // result.innerHTML = link.id;
+       for (var j=0, c=imgs.length; j<c; j++) {     		
+       	
+
+       	//adaptation du href par regex. pour recuperer l'id du lien.
+       	var myRegex = /#\W*/;
+       	var id_cible=link.href.split(myRegex)[1];
+       	
+       	if (imgs[j].id == id_cible) {
+       		imgs[j].style.zIndex = 5;
+       		imgs[j].style.opacity = 1;
+       	}
+       	else if ((imgs[j].style.zIndex == '5') && ( imgs[j].id != id_cible)) {
+       		imgs[j].style.display = -1;
+       		imgs[j].style.opacity = 0;
+
+       	}
+       	else if (change_page && (link.id != "link-home")) {
+       	    imgs[j].style.display = -1;
+       		imgs[j].style.opacity = 0;
+       }
+       else if (link.id == "link-home") {
+       	    imgs[0].style.zIndex = 5;
+       		imgs[0].style.opacity = 1;
+
+       }   
+       };
+}
+ //result.innerHTML="";
+</script>
+<script type="text/javascript">
+	var links = document.querySelectorAll("#about a"),
+    	linksLen = links.length;
+     	result2.innerHTML = "Nombre de liens " + linksLen;
+
+for (var i = 0 ; i < linksLen ; i++) {
+    links[i].onclick = function() {
+    	
+        // On appelle notre fonction pour afficher les blocks de navigations
+        displayNav(this,true);      
+        return false; // Et on bloque la redirection
+    };
+}
+
+function displayNav(link,change_page) {
+
+}
+</script>
+</html>
